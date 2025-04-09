@@ -6,16 +6,16 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 15:00:41 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/09 15:23:04 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/09 20:34:50 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned long	ft_strlen(const char *c);
+#include "libft.h"
 
-unsigned long	ft_strlcpy(char *dest, const char *src, unsigned long size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	unsigned long	counter;
-	char			*pt_dest;
+	size_t	counter;
+	char	*pt_dest;
 
 	counter = ft_strlen(src);
 	pt_dest = dest;

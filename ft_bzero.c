@@ -6,14 +6,19 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 11:21:13 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/09 11:58:32 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/09 20:43:12 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, unsigned long n)
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
 {
+	char	*pt_char;
+
+	pt_char = s;
 	while (n--)
 	{
-		*(char *)s++ = '\0';
+		*pt_char++ = '\0';
 	}
 }

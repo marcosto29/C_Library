@@ -6,11 +6,13 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 13:12:15 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/09 15:00:18 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/09 20:32:10 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dest, void *src, unsigned long n)
+#include "libft.h"
+
+void	*ft_memmove(void *dest, void *src, size_t n)
 {
 	char	*pt_dest;
 	char	*pt_src;
