@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 14:04:44 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/09 13:09:06 by matoledo         ###   ########.fr       */
+/*   Created: 2025/04/09 11:44:14 by matoledo          #+#    #+#             */
+/*   Updated: 2025/04/09 13:09:02 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned long	ft_strlen(const char *c)
+void	*ft_memcpy(void *dest, const void *src, unsigned long n)
 {
-	unsigned long	counter;
+	const char	*pt_src;
+	char		*pt_dest;
 
-	counter = 0;
-	while (*c++)
+	pt_dest = dest;
+	pt_src = src;
+	while (n--)
 	{
-		counter++;
+		*pt_dest++ = *pt_src++;
 	}
-	return (counter);
+	return (dest);
 }

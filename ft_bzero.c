@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 14:04:44 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/09 13:09:06 by matoledo         ###   ########.fr       */
+/*   Created: 2025/04/09 11:21:13 by matoledo          #+#    #+#             */
+/*   Updated: 2025/04/09 11:58:32 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned long	ft_strlen(const char *c)
+void	ft_bzero(void *s, unsigned long n)
 {
-	unsigned long	counter;
-
-	counter = 0;
-	while (*c++)
+	while (n--)
 	{
-		counter++;
+		*(char *)s++ = '\0';
 	}
-	return (counter);
 }
