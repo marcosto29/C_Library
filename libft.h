@@ -6,13 +6,14 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 16:48:58 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/10 14:24:37 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/10 16:15:01 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <unistd.h>
+# include <stdlib.h>
 
 int		ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);
