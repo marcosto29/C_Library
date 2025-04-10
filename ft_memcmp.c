@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 16:44:58 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/10 14:30:25 by matoledo         ###   ########.fr       */
+/*   Created: 2025/04/10 11:31:47 by matoledo          #+#    #+#             */
+/*   Updated: 2025/04/10 14:18:57 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const char	*pt_char;
+	const char	*pt_s1;
+	const char	*pt_s2;
 
-	pt_char = s;
+	pt_s1 = s1;
+	pt_s2 = s2;
 	while (n--)
 	{
-		if (*pt_char == c)
+		if (*pt_s1 != *pt_s2)
 		{
-			return ((char *)pt_char);
+			return (*pt_s1 - *pt_s2);
 		}
-		pt_char++;
+		pt_s1++;
+		pt_s2++;
 	}
+	return (0);
 }

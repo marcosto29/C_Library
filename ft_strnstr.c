@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 16:44:58 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/10 14:30:25 by matoledo         ###   ########.fr       */
+/*   Created: 2025/04/10 12:11:18 by matoledo          #+#    #+#             */
+/*   Updated: 2025/04/10 13:00:17 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	const char	*pt_char;
-
-	pt_char = s;
-	while (n--)
+	while (len--)
 	{
-		if (*pt_char == c)
+		if (*big == *little)
 		{
-			return ((char *)pt_char);
+			if (ft_strcmp(big, little) == 0)
+			{
+				return ((char *)big);
+			}
 		}
-		pt_char++;
+		big++;
 	}
+	return (0);
 }
