@@ -6,7 +6,7 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 14:11:14 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/11 14:27:41 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/12 13:29:29 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ char	*ft_strdup(const char *s)
 	allocate_memory = ft_strlen(s);
 	pt_return = malloc(allocate_memory);
 	ft_memcpy(pt_return, s, allocate_memory);
-	return(pt_return);
+	return (pt_return);
 }
