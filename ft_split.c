@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 11:44:14 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/13 16:14:22 by matoledo         ###   ########.fr       */
+/*   Created: 2025/04/13 16:35:47 by matoledo          #+#    #+#             */
+/*   Updated: 2025/04/13 17:03:54 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	**ft_split(char const *s, char c)
 {
-	char		*pt_dest;
-
-	pt_dest = dest;
-	while (n--)
+	char	*pt_aux;
+	char	**pt_return;
+	int		counter;
+	
+	counter = 0;
+	pt_aux = s;
+	while (*pt_aux)
 	{
-		*pt_dest++ = *(char *)src++;
+		if(pt_aux++ == c)
+			counter++;
 	}
-	return (dest);
+	pt_return = malloc(sizeof(char *) * counter);
+	pt_aux = s;
+	while(pt_aux)
+	{
+		if (pt_aux == c)
+		{
+			*pt_return = pt_aux;
+			pt_return++;
+		}
+		pt_aux++;
+	}
+	return (pt_return);
 }

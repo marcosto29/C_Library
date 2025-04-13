@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 11:44:14 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/13 16:14:22 by matoledo         ###   ########.fr       */
+/*   Created: 2025/04/13 16:25:32 by matoledo          #+#    #+#             */
+/*   Updated: 2025/04/13 16:44:52 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char		*pt_dest;
+	char	*pt_return;
 
-	pt_dest = dest;
-	while (n--)
-	{
-		*pt_dest++ = *(char *)src++;
-	}
-	return (dest);
+	return (pt_return);
 }

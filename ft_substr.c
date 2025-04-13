@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 11:44:14 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/13 16:14:22 by matoledo         ###   ########.fr       */
+/*   Created: 2025/04/13 11:18:54 by matoledo          #+#    #+#             */
+/*   Updated: 2025/04/13 16:16:23 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char		*pt_dest;
+	char	*pt_return;
+	size_t	s_len;
 
-	pt_dest = dest;
-	while (n--)
-	{
-		*pt_dest++ = *(char *)src++;
-	}
-	return (dest);
+	s_len = ft_strlen(s);
+	//check if the len is bigger than the word if it is, don't allow it
+	if (start + len > s_len)
+		return (0);
+	pt_return = malloc(len);
+	if (!pt_return && len)
+		return (0);
+	ft_memcpy(pt_return, s + start, len);
+	return (pt_return);
 }

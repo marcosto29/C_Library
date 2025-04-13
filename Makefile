@@ -6,7 +6,7 @@
 #    By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 16:09:09 by matoledo          #+#    #+#              #
-#    Updated: 2025/04/12 20:48:39 by matoledo         ###   ########.fr        #
+#    Updated: 2025/04/13 17:15:32 by matoledo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ $(EXECUTABLE) : $(ARCHIVE) $(OBJS)
 	$(CC) -o $(EXECUTABLE) $(OBJS) -L $(ARCHIVE)
 
 $(ARCHIVE): $(OBJS)
-	ar -rv $(ARCHIVE) $(OBJS)
+	ar -r $(ARCHIVE) $(OBJS)
 
 #when the makefile tries to access the .o files but doesn't finds them is gonna search for a rule to create them
 #this is that rule

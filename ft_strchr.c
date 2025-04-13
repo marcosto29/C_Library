@@ -6,13 +6,13 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 16:24:18 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/12 16:16:01 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/12 21:53:07 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s || *(s - 1))
+	while (*s)
 	{
 		if (*s == c)
 		{
@@ -20,5 +20,7 @@ char	*ft_strchr(const char *s, int c)
 		}
 		s++;
 	}
+	if (*s == c)
+		return ((char *)s);
 	return (0);
 }

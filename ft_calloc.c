@@ -6,7 +6,7 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 14:25:12 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/12 16:35:15 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/12 21:55:45 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	total = nmemb * size;
 	pt_call = malloc(total);
+	if (!pt_call && size)
+		return (0);
 	ft_bzero(pt_call, total);
 	return (pt_call);
 }
