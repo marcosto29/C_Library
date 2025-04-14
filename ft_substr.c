@@ -6,7 +6,7 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 11:18:54 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/13 16:16:23 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/14 20:47:10 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	s_len;
 
 	s_len = ft_strlen(s);
-	//check if the len is bigger than the word if it is, don't allow it
 	if (start + len > s_len)
 		return (0);
 	pt_return = malloc(len);

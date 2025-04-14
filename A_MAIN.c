@@ -6,7 +6,7 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 20:00:00 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/13 11:16:28 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/14 21:44:00 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,19 @@
 #include <stdlib.h>
 #include <strings.h>
 #include <unistd.h>
+
+void	ft_striteri_example(unsigned int index, char *c)
+{
+	if (*(c + index) >= 97 && *(c + index) <= 122)
+	{
+		*(c + index) -= 32;
+	}
+}
+
+char	ft_strmapi_example(unsigned int index, char c)
+{
+	return('A');
+}
 
 int	main(void)
 {
@@ -57,13 +70,18 @@ int	main(void)
 		write(1, pt_bzero++, 1);
 	write(1, "\n\n\n", 1);
 	
-	//ft_calloc
-	printf("FT_CALLOC:\n\n");
+	//ft_strtiteri
+	printf("FT_STRITERI:\n\n");
 
-	printf("ft_calloc, pointer size: 10\n");
-	// int		counter = 10;
-	// char	*pt_calloc = ft_calloc(counter, 1);
+	char	ft_striteri_word[] = "hola";
+	ft_striteri(ft_striteri_word, ft_striteri_example);
+	printf("%s\n\n\n", ft_striteri_word);
 
-	//ft_isalnum
-	//
+	//ft_strmapi
+	printf("FT_STRMAPI:\n\n");
+
+	char	ft_strmapi_word[] = "HOLA";
+	char	*ft_strmapi_pt_word;
+	ft_strmapi_pt_word = ft_strmapi(ft_strmapi_word, ft_strmapi_example);
+	printf("%s\n\n\n", ft_strmapi_pt_word);
 }
