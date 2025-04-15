@@ -6,7 +6,7 @@
 #    By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 16:09:09 by matoledo          #+#    #+#              #
-#    Updated: 2025/04/15 11:31:36 by matoledo         ###   ########.fr        #
+#    Updated: 2025/04/15 16:11:02 by matoledo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = cc
 
 CFLAGS = -Wall -Werror -Wextra -I
 
-ARCHIVE = libft.a
+NAME = libft.a
 
 EXECUTABLE = main
 
@@ -57,18 +57,18 @@ SRCS = ft_atoi.c \
 #Finds all the .c files with wildcard and substitute the final .c for .o with patsubst
 #another approach is OBJS = $(SRCS.c=.o)
 #what this is saying is: OBJS is a list of SRC but with .o instead of .c
-OBJS = $(SRCS=%.c:%.o)
+OBJS = $(SRCS:.c=.o)
 
-all: $(ARCHIVE)
+all: $(NAME)
 
 #command -L to reference the .a file
 exe: $(EXECUTABLE)
 
-$(EXECUTABLE) : $(ARCHIVE) $(OBJS)
-	$(CC) -o $(EXECUTABLE) $(OBJS) -L $(ARCHIVE)
+$(EXECUTABLE) : $(NAME) $(OBJS)
+	$(CC) -o $(EXECUTABLE) $(OBJS) -L $(NAME)
 
-$(ARCHIVE): $(OBJS)
-	ar -r $(ARCHIVE) $(OBJS)
+$(NAME): $(OBJS)
+	ar -r $(NAME) $(OBJS)
 
 #when the makefile tries to access the .o files but doesn't finds them is gonna search for a rule to create them
 #this is that rule
@@ -78,4 +78,9 @@ $(ARCHIVE): $(OBJS)
 	$(CC) -c $(CFLAGS) $@ $<
 
 clean:
-	rm -rf $(EXECUTABLE) $(OBJS) $(ARCHIVE)
+	rm -rf $(EXECUTABLE) $(OBJS)
+
+fclean: clean
+	rm -rf $(NAME)
+
+re: fclean all

@@ -6,13 +6,15 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 16:30:16 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/10 14:23:11 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/15 16:14:34 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const char *s1, const char *s2)
+#include "libft.h"
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	while (*s1 || *s2)
+	while ((*s1 || *s2) && n--)
 	{
 		if (*s1 != *s2)
 		{
