@@ -6,7 +6,7 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:40:52 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/13 16:43:29 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/15 13:21:41 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-
+	while (*s)
+		write(fd, s++, 1);
 }

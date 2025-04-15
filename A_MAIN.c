@@ -6,7 +6,7 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 20:00:00 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/14 21:44:00 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/15 13:40:42 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <strings.h>
 #include <unistd.h>
+#include <stdio.h>
 
 void	ft_striteri_example(unsigned int index, char *c)
 {

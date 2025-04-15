@@ -6,7 +6,7 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 11:18:54 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/14 20:47:10 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/15 12:58:49 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start + len > s_len)
 		return (0);
 	pt_return = malloc(len);
-	if (!pt_return && len)
+	if (!pt_return)
 		return (0);
 	ft_memcpy(pt_return, s + start, len);
 	return (pt_return);

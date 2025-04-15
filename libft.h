@@ -6,7 +6,7 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 16:48:58 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/14 15:10:52 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/15 13:16:13 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 //(Singleton like)
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <stdio.h>
+# include <unistd.h>
 # include <stdlib.h>
 
 int		ft_atoi(const char *nptr);
