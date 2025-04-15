@@ -6,7 +6,7 @@
 #    By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 16:09:09 by matoledo          #+#    #+#              #
-#    Updated: 2025/04/13 17:15:32 by matoledo         ###   ########.fr        #
+#    Updated: 2025/04/15 11:31:36 by matoledo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,46 @@ ARCHIVE = libft.a
 
 EXECUTABLE = main
 
-SRCS = $(wildcard *.c)
+SRCS = ft_atoi.c \
+	ft_bzero.c \
+	ft_calloc.c \
+	ft_isalnum.c \
+	ft_isalpha.c \
+	ft_isascii.c \
+	ft_isdigit.c \
+	ft_isprint.c \
+	ft_itoa.c \
+	ft_memchr.c \
+	ft_memcmp.c \
+	ft_memcpy.c \
+	ft_memmove.c \
+	ft_memset.c \
+	ft_putchar_fd.c \
+	ft_putendl_fd.c \
+	ft_putnbr_fd.c \
+	ft_putstr_fd.c \
+	ft_split.c \
+	ft_strchr.c \
+	ft_strdup.c \
+	ft_striteri.c \
+	ft_strjoin.c \
+	ft_strlcat.c \
+	ft_strlcpy.c \
+	ft_strlen.c \
+	ft_strmapi.c \
+	ft_strncmp.c \
+	ft_strnstr.c \
+	ft_strrchr.c \
+	ft_strtrim.c \
+	ft_substr.c \
+	ft_tolower.c \
+	ft_toupper.c \
+
 
 #Finds all the .c files with wildcard and substitute the final .c for .o with patsubst
 #another approach is OBJS = $(SRCS.c=.o)
 #what this is saying is: OBJS is a list of SRC but with .o instead of .c
-OBJS = $(patsubst %.c, %.o, $(wildcard *.c))
+OBJS = $(SRCS=%.c:%.o)
 
 all: $(ARCHIVE)
 
