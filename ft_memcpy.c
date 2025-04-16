@@ -6,7 +6,7 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 11:44:14 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/14 20:47:26 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/16 17:47:37 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	pt_src = src;
 	pt_dest = dest;
+	if (!src && !dest)
+		return (dest);
 	while (n--)
 	{
 		*pt_dest++ = *pt_src++;
