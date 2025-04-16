@@ -6,7 +6,7 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:42:45 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/16 11:49:27 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/16 16:18:28 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	char	c;
 
-	if (n == -2147483647)
+	if (n == -2147483648)
 	{
-		write(fd, "-2147483647", 11);
+		write(fd, "-2147483648", 11);
 		return ;
 	}
 	if (n < 0)
