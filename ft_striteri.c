@@ -6,7 +6,7 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:38:44 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/14 21:07:14 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/16 10:34:28 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	{
 		f(index, s);
 		index++;
+		s++;
 	}
 }

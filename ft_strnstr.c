@@ -6,7 +6,7 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 12:11:18 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/15 16:16:35 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/16 13:33:18 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,21 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
+	size_t	len_little;
+
+	if (*little == '\0')
+		return ((char *)big);
+	len_little = ft_strlen(little);
 	while (len--)
 	{
 		if (*big == *little)
 		{
-			if (ft_strncmp(big, little, len) == 0)
+			if (len > len_little)
 			{
-				return ((char *)big);
+				if (ft_strncmp(big, little, len_little) == 0)
+				{
+					return ((char *)big);
+				}
 			}
 		}
 		big++;
