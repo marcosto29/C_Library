@@ -6,11 +6,23 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:35:47 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/15 12:07:25 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/17 09:57:13 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	free_memory(char **splitted_word)
+{
+	char	**pt_aux;
+
+	pt_aux = splitted_word;
+	while(*pt_aux)
+	{
+		free(pt_aux++);
+	}
+	free(splitted_word);
+}
 
 static unsigned int	ft_splits_number(const char *to_split, char split_character)
 {
@@ -59,6 +71,8 @@ char	**ft_split(char const *s, char c)
 	pt_aux = (char *)s;
 	splits = ft_splits_number(s, c);
 	pt_return = ft_calloc(sizeof(char *), (splits + 1));
+	if (!pt_return)
+		return (0);
 	ft_split_word(pt_return, pt_aux, c);
 	return ((char **)pt_return);
 }

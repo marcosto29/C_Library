@@ -6,7 +6,7 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:36:34 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/16 17:14:09 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/17 19:06:43 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static	unsigned int	number_size(int aux_n)
 {
 	unsigned int	size;
 
-	size = 0;
-	while (aux_n > 0)
+	size = 1;
+	while (aux_n / 10 > 0)
 	{
 		aux_n /= 10;
 		size++;
@@ -48,8 +48,6 @@ char	*ft_itoa(int n)
 		negative++;
 	}
 	size = number_size(n);
-	if (size == 0)
-		size = 1;
 	pt_return = ft_calloc(sizeof(char), size + 1 + negative);
 	if (!pt_return)
 		return (0);
