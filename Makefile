@@ -6,7 +6,7 @@
 #    By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 16:09:09 by matoledo          #+#    #+#              #
-#    Updated: 2025/04/15 16:11:02 by matoledo         ###   ########.fr        #
+#    Updated: 2025/04/17 23:54:57 by matoledo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,22 +53,30 @@ SRCS = ft_atoi.c \
 	ft_tolower.c \
 	ft_toupper.c \
 
+BONUS = ft_lstnew.c \
+	ft_lstadd_front.c \
+	
 
 #Finds all the .c files with wildcard and substitute the final .c for .o with patsubst
 #another approach is OBJS = $(SRCS.c=.o)
 #what this is saying is: OBJS is a list of SRC but with .o instead of .c
 OBJS = $(SRCS:.c=.o)
 
-all: $(NAME)
+OBJSBONUS = $(BONUS:.c=.o)
 
 #command -L to reference the .a file
 exe: $(EXECUTABLE)
 
-$(EXECUTABLE) : $(NAME) $(OBJS)
-	$(CC) -o $(EXECUTABLE) $(OBJS) -L $(NAME)
+all: $(NAME)
+
+make bonus: $(NAME) $(OBJS) $(OBJSBONUS)
+	ar -r $(NAME) $(OBJS) $(OBJSBONUS)
 
 $(NAME): $(OBJS)
 	ar -r $(NAME) $(OBJS)
+
+$(EXECUTABLE) : $(NAME) $(OBJS)
+	$(CC) -o $(EXECUTABLE) $(OBJS) -L $(NAME)
 
 #when the makefile tries to access the .o files but doesn't finds them is gonna search for a rule to create them
 #this is that rule

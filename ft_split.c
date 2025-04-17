@@ -6,7 +6,7 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:35:47 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/17 23:39:23 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/17 23:45:51 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static unsigned int	ft_splits_number(const char *to_split, char split_character)
 			{
 				to_split++;
 			}
-			continue;
+			continue ;
 		}
 		to_split++;
 	}
