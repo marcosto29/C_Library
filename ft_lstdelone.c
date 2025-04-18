@@ -6,7 +6,7 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 13:06:08 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/18 13:06:35 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/18 15:38:27 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-
+	del(lst);
+	free(lst);
 }

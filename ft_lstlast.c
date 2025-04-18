@@ -6,7 +6,7 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 13:04:36 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/18 13:06:47 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/18 15:25:55 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	return (0);
+	while (lst->next)
+	{
+		lst = lst->next;
+	}
+	return (lst);
 }
