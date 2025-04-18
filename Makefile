@@ -6,7 +6,7 @@
 #    By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 16:09:09 by matoledo          #+#    #+#              #
-#    Updated: 2025/04/17 23:54:57 by matoledo         ###   ########.fr        #
+#    Updated: 2025/04/18 13:12:24 by matoledo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,6 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra -I
 
 NAME = libft.a
-
-EXECUTABLE = main
 
 SRCS = ft_atoi.c \
 	ft_bzero.c \
@@ -53,9 +51,15 @@ SRCS = ft_atoi.c \
 	ft_tolower.c \
 	ft_toupper.c \
 
-BONUS = ft_lstnew.c \
+BONUS = ft_lstadd_back.c \
 	ft_lstadd_front.c \
-	
+	ft_lstclear.c \
+	ft_lstdelone.c \
+	ft_lstiter.c \
+	ft_lstlast.c \
+	ft_lstmap.c \
+	ft_lstnew.c \
+	ft_lstsize.c \
 
 #Finds all the .c files with wildcard and substitute the final .c for .o with patsubst
 #another approach is OBJS = $(SRCS.c=.o)
@@ -63,9 +67,6 @@ BONUS = ft_lstnew.c \
 OBJS = $(SRCS:.c=.o)
 
 OBJSBONUS = $(BONUS:.c=.o)
-
-#command -L to reference the .a file
-exe: $(EXECUTABLE)
 
 all: $(NAME)
 
@@ -75,9 +76,6 @@ make bonus: $(NAME) $(OBJS) $(OBJSBONUS)
 $(NAME): $(OBJS)
 	ar -r $(NAME) $(OBJS)
 
-$(EXECUTABLE) : $(NAME) $(OBJS)
-	$(CC) -o $(EXECUTABLE) $(OBJS) -L $(NAME)
-
 #when the makefile tries to access the .o files but doesn't finds them is gonna search for a rule to create them
 #this is that rule
 #$@ refers to the target in this case %.o (what is at the left of the :)
@@ -86,7 +84,7 @@ $(EXECUTABLE) : $(NAME) $(OBJS)
 	$(CC) -c $(CFLAGS) $@ $<
 
 clean:
-	rm -rf $(EXECUTABLE) $(OBJS)
+	rm -rf $(OBJS) $(OBJSBONUS)
 
 fclean: clean
 	rm -rf $(NAME)

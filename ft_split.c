@@ -6,7 +6,7 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:35:47 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/17 23:45:51 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/18 12:57:52 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,7 @@ static char	**ft_split_word(char **split, const char *to_split, char c)
 	letters = ft_letters_counter(to_split, c);
 	splitted = ft_calloc(sizeof(char), letters + 1);
 	if (!splitted)
-	{
-		free_memory(split);
 		return (0);
-	}
 	while (*to_split != c && *to_split)
 		*splitted++ = *to_split++;
 	*split++ = splitted - letters;
@@ -89,10 +86,17 @@ char	**ft_split(char const *s, char c)
 	unsigned int	splits;
 
 	s = ft_strtrim(s, &c);
+	if (!s)
+		return (0);
 	splits = ft_splits_number(s, c);
 	pt_return = ft_calloc(sizeof(char *), splits + 1);
 	if (!pt_return)
 		return (0);
 	pt_return = ft_split_word(pt_return, s, c);
+	if (!pt_return)
+	{
+		free_memory(pt_return);
+		return (0);
+	}
 	return ((char **)pt_return);
 }
