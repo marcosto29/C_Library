@@ -6,7 +6,7 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 13:09:33 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/19 21:08:58 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/19 21:09:21 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*return_list;
 	t_list	*aux;
 
+	return_list = NULL;
 	while (lst)
 	{
 		aux = ft_lstnew(f(lst->content));
