@@ -6,7 +6,7 @@
 #    By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 16:09:09 by matoledo          #+#    #+#              #
-#    Updated: 2025/04/18 13:12:24 by matoledo         ###   ########.fr        #
+#    Updated: 2025/04/19 20:51:06 by matoledo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,7 @@ OBJSBONUS = $(BONUS:.c=.o)
 
 all: $(NAME)
 
-make bonus: $(NAME) $(OBJS) $(OBJSBONUS)
+bonus: $(NAME) $(OBJS) $(OBJSBONUS)
 	ar -r $(NAME) $(OBJS) $(OBJSBONUS)
 
 $(NAME): $(OBJS)
