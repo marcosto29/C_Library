@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 23:47:55 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/19 14:53:33 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/04/21 19:43:36 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,6 @@ t_list	*ft_lstnew(void *content)
 
 	node = (t_list *) ft_calloc(sizeof(t_list), 1);
 	if (!node)
-		return (0);
-	node->content = (void *) ft_calloc(sizeof(content), 1);
-	if (!node->content)
 		return (0);
 	node->content = content;
 	node->next = NULL;
