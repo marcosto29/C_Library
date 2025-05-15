@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd_base_r.c                              :+:      :+:    :+:   */
+/*   ft_putnbr_fd_b.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 10:12:04 by matoledo          #+#    #+#             */
-/*   Updated: 2025/05/15 10:45:52 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/05/15 13:58:28 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	print_number(int nbr, char *base, int base_size, int fd)
+//function to print number in any base on specified fd 
+void	print_nbr(unsigned long long nbr, const char *b, int b_sz, int fd)
 {
-	int	bytes_returned;
-
-	bytes_returned = 0;
-	if (nbr / base_size > 0)
+	if (nbr / b_sz > 0)
 	{
-		bytes_returned += print_number(nbr / base_size, base, base_size, fd);
+		print_nbr(nbr / b_sz, b, b_sz, fd);
 	}
-	return (bytes_returned + (int)write(fd, (base + (nbr % base_size)), 1));
+	write(fd, (b + (nbr % b_sz)), 1);
+	return ;
 }
 
-//write a decimal number in any base
-int	ft_putnbr_fd_base_r(long long nbr, char *base, int base_size, int fd)
+//function to parse/write a long long in any base on specified fd
+void	ft_putnbr_fd_b(long long nbr, const char *b, int b_sz, int fd)
 {
-	int	bytes_returned;
-
-	bytes_returned = 0;
 	if (nbr < 0)
 	{
 		nbr *= -1;
-		bytes_returned += (int)write(fd, "-", 1);
+		write(fd, "-", 1);
 	}
-	bytes_returned += print_number(nbr, base, base_size, fd);
-	return (bytes_returned);
+	print_nbr(nbr, b, b_sz, fd);
 }

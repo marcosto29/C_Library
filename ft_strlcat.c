@@ -6,12 +6,14 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 15:26:54 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/09 20:32:09 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/05/15 12:30:08 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//function to check if able and try to concatenate
+//the string src into the string dest
 size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
 	size_t	dest_len;

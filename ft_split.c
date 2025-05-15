@@ -6,7 +6,7 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:35:47 by matoledo          #+#    #+#             */
-/*   Updated: 2025/05/14 20:40:38 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/05/15 12:26:22 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ static char	**ft_split_word(char **split, const char *to_split, char c)
 	return (pt_split);
 }
 
+//function to split the string s to different string given the character c
 char	**ft_split(char const *s, char c)
 {
 	char			**pt_return;

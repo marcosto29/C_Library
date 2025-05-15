@@ -6,12 +6,13 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:42:45 by matoledo          #+#    #+#             */
-/*   Updated: 2025/04/16 16:18:28 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/05/15 12:25:16 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//function to write an integer on specified fd
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	c;
