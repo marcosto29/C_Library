@@ -6,7 +6,7 @@
 #    By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 16:09:09 by matoledo          #+#    #+#              #
-#    Updated: 2025/04/22 12:37:48 by matoledo         ###   ########.fr        #
+#    Updated: 2025/05/15 10:45:30 by matoledo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,9 +30,14 @@ SRCS = ft_atoi.c \
 	ft_memcpy.c \
 	ft_memmove.c \
 	ft_memset.c \
+	ft_putchar_fd_r.c \
 	ft_putchar_fd.c \
 	ft_putendl_fd.c \
+	ft_putnbr_fd_base_r.c \
+	ft_putnbr_fd_base.c \
+	ft_putnbr_fd_r.c \
 	ft_putnbr_fd.c \
+	ft_putstr_fd_r.c \
 	ft_putstr_fd.c \
 	ft_split.c \
 	ft_strchr.c \
