@@ -6,7 +6,7 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 16:48:58 by matoledo          #+#    #+#             */
-/*   Updated: 2025/05/15 14:00:00 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/05/17 22:17:58 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
+# include <fcntl.h>
+
+//BUFFER_SIZE to read files when using get_next_line function
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 typedef struct s_list
 {
@@ -27,6 +33,7 @@ typedef struct s_list
 int		ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
+char	*get_next_line(int fd);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);

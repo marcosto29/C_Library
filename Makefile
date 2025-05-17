@@ -6,7 +6,7 @@
 #    By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 16:09:09 by matoledo          #+#    #+#              #
-#    Updated: 2025/05/15 14:16:01 by matoledo         ###   ########.fr        #
+#    Updated: 2025/05/17 22:18:12 by matoledo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ NAME = libft.a
 SRCS = ft_atoi.c \
 	ft_bzero.c \
 	ft_calloc.c \
+	ft_get_next_line.c \
 	ft_isalnum.c \
 	ft_isalpha.c \
 	ft_isascii.c \
