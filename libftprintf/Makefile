@@ -6,7 +6,7 @@
 #    By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/19 13:02:55 by matoledo          #+#    #+#              #
-#    Updated: 2025/05/19 13:45:35 by matoledo         ###   ########.fr        #
+#    Updated: 2025/05/19 16:16:53 by matoledo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRCS = ft_printf.c \
 OBJS = $(SRCS:.c=.o)
 
 $(NAME): $(OBJS)
-	ar -r $(NAME) $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) $<

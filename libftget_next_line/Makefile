@@ -6,7 +6,7 @@
 #    By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/19 13:06:26 by matoledo          #+#    #+#              #
-#    Updated: 2025/05/19 13:49:47 by matoledo         ###   ########.fr        #
+#    Updated: 2025/05/19 16:16:58 by matoledo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRCS = ft_get_next_line.c \
 OBJS = $(SRCS:.c=.o)
 
 $(NAME): $(OBJS)
-	ar -r $(NAME) $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) $<

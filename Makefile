@@ -6,7 +6,7 @@
 #    By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 16:09:09 by matoledo          #+#    #+#              #
-#    Updated: 2025/05/19 14:25:06 by matoledo         ###   ########.fr        #
+#    Updated: 2025/05/19 16:19:17 by matoledo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,14 +81,16 @@ OBJSBONUS = $(BONUS:.c=.o)
 all: $(NAME)
 
 bonus: $(NAME) $(OBJS) $(OBJSBONUS)
-	ar -r $(NAME) $(OBJS) $(OBJSBONUS)
+	ar -rcs $(NAME) $(OBJS) $(OBJSBONUS)
 
 #when creating the library access each of the subdirectories and create it respectives libraries
+#this way each function can have its own .a
 $(NAME): $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
 	for dir in $(DIRS); do \
 		$(MAKE) -C $$dir all; \
+		ar -rcs $(NAME) $$dir/*.o; \
 	done
-	ar -r $(NAME) $(OBJS) $(LIBS)
 
 #when the makefile tries to access the .o files but doesn't finds them is gonna search for a rule to create them
 #this is that rule
