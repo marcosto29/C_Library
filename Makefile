@@ -6,7 +6,7 @@
 #    By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 16:09:09 by matoledo          #+#    #+#              #
-#    Updated: 2025/05/19 16:19:17 by matoledo         ###   ########.fr        #
+#    Updated: 2025/05/19 16:39:39 by matoledo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,12 +66,6 @@ BONUS = ft_lstadd_back_bonus.c \
 	ft_lstnew_bonus.c \
 	ft_lstsize_bonus.c \
 
-DIRS = ./libftget_next_line \
-		./libftprintf
-
-LIBS = ./libftget_next_line/libftget_next_line.a \
-		./libftprintf/libftprintf.a
-
 #Finds all the .c files and substitute the final .c for .o with
 #what this is saying is: OBJS is the list of SRCS but with .o instead of .c
 OBJS = $(SRCS:.c=.o)
@@ -85,12 +79,13 @@ bonus: $(NAME) $(OBJS) $(OBJSBONUS)
 
 #when creating the library access each of the subdirectories and create it respectives libraries
 #this way each function can have its own .a
-$(NAME): $(OBJS)
-	ar -rcs $(NAME) $(OBJS)
-	for dir in $(DIRS); do \
+#	for dir in $(DIRS); do \
 		$(MAKE) -C $$dir all; \
 		ar -rcs $(NAME) $$dir/*.o; \
 	done
+
+$(NAME): $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
 
 #when the makefile tries to access the .o files but doesn't finds them is gonna search for a rule to create them
 #this is that rule
@@ -99,19 +94,10 @@ $(NAME): $(OBJS)
 	$(CC) -c $(CFLAGS) $<
 
 clean:
-	for dir in $(DIRS); do \
-		$(MAKE) -C $$dir clean; \
-	done
 	rm -rf *.o
 
 fclean: clean
-	for dir in $(DIRS); do \
-		$(MAKE) -C $$dir fclean; \
-	done
 	rm -rf *.a
 
 #when re, the fclean and all target are executed
 re: fclean all
-	for dir in $(DIRS); do \
-		$(MAKE) -C $$dir re; \
-	done
