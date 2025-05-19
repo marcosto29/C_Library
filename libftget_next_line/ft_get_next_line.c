@@ -6,11 +6,11 @@
 /*   By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 16:49:17 by matoledo          #+#    #+#             */
-/*   Updated: 2025/05/17 22:16:10 by matoledo         ###   ########.fr       */
+/*   Updated: 2025/05/19 12:49:29 by matoledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftget_next_line.h"
 
 static char	*read_buffer(int fd, int *bytes_read)
 {
@@ -39,6 +39,7 @@ static char	*increment_readed_buffer(char *pt_buffer, int fd, int *bytes_read)
 	return (free(pt_read), free(pt_buffer), pt_return);
 }
 
+//search the end of line and readjust the buffer
 static char	*search_end_of_line(char **pt_buffer)
 {
 	char	*pt_aux;
@@ -60,6 +61,7 @@ static char	*search_end_of_line(char **pt_buffer)
 	return (pt_return);
 }
 
+//function to read until the next end of line of a file
 char	*get_next_line(int fd)
 {
 	static char	*buf[1024];

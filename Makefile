@@ -6,20 +6,19 @@
 #    By: matoledo <matoledo@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 16:09:09 by matoledo          #+#    #+#              #
-#    Updated: 2025/05/17 22:18:12 by matoledo         ###   ########.fr        #
+#    Updated: 2025/05/19 14:25:06 by matoledo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra -I
+CFLAGS = -Wall -Werror -Wextra
 
 NAME = libft.a
 
 SRCS = ft_atoi.c \
 	ft_bzero.c \
 	ft_calloc.c \
-	ft_get_next_line.c \
 	ft_isalnum.c \
 	ft_isalpha.c \
 	ft_isascii.c \
@@ -31,7 +30,6 @@ SRCS = ft_atoi.c \
 	ft_memcpy.c \
 	ft_memmove.c \
 	ft_memset.c \
-	ft_printf.c \
 	ft_putchar_fd_r.c \
 	ft_putchar_fd.c \
 	ft_putendl_fd.c \
@@ -68,9 +66,14 @@ BONUS = ft_lstadd_back_bonus.c \
 	ft_lstnew_bonus.c \
 	ft_lstsize_bonus.c \
 
-#Finds all the .c files with wildcard and substitute the final .c for .o with patsubst
-#another approach is OBJS = $(SRCS.c=.o)
-#what this is saying is: OBJS is a list of SRC but with .o instead of .c
+DIRS = ./libftget_next_line \
+		./libftprintf
+
+LIBS = ./libftget_next_line/libftget_next_line.a \
+		./libftprintf/libftprintf.a
+
+#Finds all the .c files and substitute the final .c for .o with
+#what this is saying is: OBJS is the list of SRCS but with .o instead of .c
 OBJS = $(SRCS:.c=.o)
 
 OBJSBONUS = $(BONUS:.c=.o)
@@ -80,20 +83,33 @@ all: $(NAME)
 bonus: $(NAME) $(OBJS) $(OBJSBONUS)
 	ar -r $(NAME) $(OBJS) $(OBJSBONUS)
 
+#when creating the library access each of the subdirectories and create it respectives libraries
 $(NAME): $(OBJS)
-	ar -r $(NAME) $(OBJS)
+	for dir in $(DIRS); do \
+		$(MAKE) -C $$dir all; \
+	done
+	ar -r $(NAME) $(OBJS) $(LIBS)
 
 #when the makefile tries to access the .o files but doesn't finds them is gonna search for a rule to create them
 #this is that rule
-#$@ refers to the target in this case %.o (what is at the left of the :)
 #$< refers to the first parameter in this case %.c (what is at the right of the :)
 %.o : %.c
-	$(CC) -c $(CFLAGS) $@ $<
+	$(CC) -c $(CFLAGS) $<
 
 clean:
-	rm -rf $(OBJS) $(OBJSBONUS)
+	for dir in $(DIRS); do \
+		$(MAKE) -C $$dir clean; \
+	done
+	rm -rf *.o
 
 fclean: clean
-	rm -rf $(NAME)
+	for dir in $(DIRS); do \
+		$(MAKE) -C $$dir fclean; \
+	done
+	rm -rf *.a
 
+#when re, the fclean and all target are executed
 re: fclean all
+	for dir in $(DIRS); do \
+		$(MAKE) -C $$dir re; \
+	done
